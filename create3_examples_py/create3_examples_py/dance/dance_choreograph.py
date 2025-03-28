@@ -116,7 +116,7 @@ class DanceCommandPublisher(Node):
         self.wait_on_params = False
         self.last_wait_subscriber_printout = None
         self.finished = False
-        self.params_cli = self.create_client(SetParameters, '/motion_control/set_parameters')
+        self.params_cli = self.create_client(SetParameters, '/Robot6/motion_control/set_parameters')
         while not self.params_cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
 
