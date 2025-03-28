@@ -105,8 +105,8 @@ class DanceCommandPublisher(Node):
         '''    
         super().__init__('dance_command_publisher')
         self.dance_choreographer = dance_choreographer
-        self.lights_publisher = self.create_publisher(LightringLeds, 'cmd_lightring', 10)
-        self.vel_publisher = self.create_publisher(Twist, 'cmd_vel', 10)
+        self.lights_publisher = self.create_publisher(LightringLeds, '/Robot6/cmd_lightring', 10)
+        self.vel_publisher = self.create_publisher(Twist, '/Robot6/cmd_vel', 10)
         timer_period = 0.05  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.last_twist = Twist()
